@@ -1,0 +1,80 @@
+# Fibonacci series
+def fibonacci(num):
+    fibonacci_series = [0, 1]
+    while (len(fibonacci_series) < num):
+        fibonacci_series.append(fibonacci_series[-1] + fibonacci_series[-2])
+    return fibonacci_series
+
+
+# print(fibonacci(10))
+
+# count occurrences
+def count_occurrences(user_input):
+    user_input_dic = {}
+    for x in user_input:
+        if x in user_input_dic:
+            user_input_dic[x] += 1
+        else:
+            user_input_dic[x] = 1
+    return user_input_dic
+
+
+# print(count_occurrences("AABBDXSSSWD"))
+
+# palindrome
+def palindrome(user_input):
+    temp = user_input
+    reverse_user_input = user_input[::-1]
+    if temp == reverse_user_input:
+        return "Given string is palindrome"
+    return "Given string is not palindrome"
+
+
+# print(palindrome("151"))
+
+
+# prime number
+def prime_number(num):
+    if num <= 1:
+        return False
+    for x in range(2, int(num ** 0.5) + 1):
+        if num % x == 0:
+            return "Not prime number"
+    return "Prime number"
+
+
+# print(prime_number(5))
+
+# sort a series
+def sort_series(user_list: str):
+    # print(sorted(user_list))
+    for x in range(user_list):
+        for item in range(user_list - x - 1):
+            if user_list[item] > user_list[item + 1]:
+                user_list[item], user_list[item + 1] = user_list[item + 1], user_list[item]
+    return user_list
+
+
+# print(sort_series(str([44,2,3,77])))
+
+# find the largest number from the list
+def find_largest_number(num):
+    largest = num[0]
+    for x in num:
+        if x > largest:
+            largest = x
+    return largest
+
+
+# print(f"Largest number of the list is :{find_largest_number([1, 3, 5, 2, 3, 4, 5, 6])}")
+
+
+# Factorial number
+def factorial(num: int) -> int:
+    resutl = 1
+    for x in range(1, num + 1):
+        resutl *= x
+    return resutl
+
+
+print(f" The factorail of given number is: {factorial(5)}")
