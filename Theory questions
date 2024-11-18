@@ -2,4 +2,10 @@
   Python Installer Package
 #2- What is PEP?
   Python Enhancement Praposal- uses to write python code in perfect structure and with many more benifits.
-#3- 
+#3- Get the memory allocation of variable?
+  import sys
+  x=10
+  y=x
+  print(sys.getsizeof(x))
+  print(sys.getsizeof(y))
+
